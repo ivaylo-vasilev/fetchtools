@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import platform
+import shutil
 import socket
 from urllib import request, error
 import argparse
@@ -9,7 +10,7 @@ import sys
 # Fetch system information using the default Python libraries
 
 parser = argparse.ArgumentParser(prog="sysfetch", description="System information fetch", epilog="(c)Ivaylo Vasilev")
-parser.add_argument("--version", action="version", version="%(prog)s 0.3", help="show program version")
+parser.add_argument("--version", action="version", version="%(prog)s 0.5", help="show program version")
 args = parser.parse_args()
 
 
@@ -23,19 +24,25 @@ def systemfetch():
     localip = local_ip()
     publicip = public_ip()
 
+    terminal_size = shutil.get_terminal_size()
+    columns = terminal_size[0]
+    lines = terminal_size[1]
+
     return f"""
     System Information
     ==================
 
-    System      : {sysinfo[0]}
-    Release     : {sysinfo[2]}
-    Version     : {sysinfo[3]}
+    System        : {sysinfo[0]}
+    Release       : {sysinfo[2]}
+    Version       : {sysinfo[3]}
 
-    Machine     : {sysinfo[4]}
-    Hostname    : {sysinfo[1]}
-    Local IP    : {localip}
-    Public IPv4 : {publicip[0]}
-    Public IPv6 : {publicip[1]}
+    Machine       : {sysinfo[4]}
+    Hostname      : {sysinfo[1]}
+    Local IP      : {localip}
+    Public IPv4   : {publicip[0]}
+    Public IPv6   : {publicip[1]}
+
+    Terminal size : {columns} x {lines}
 
     """
 
