@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+##############################
+# sysfetch #
+# ======== #
+# System information fetching tool
+# Copyright (c)2025 Ivaylo Vasilev. Released under the MIT License; see LICENSE for details.
+# Author: Ivaylo Vasilev
+##############################
+
 import platform
 import shutil
 import getpass
@@ -10,7 +18,7 @@ import sys
 
 # Fetch system information using the default Python libraries
 
-parser = argparse.ArgumentParser(prog="sysfetch", description="System information fetch", epilog="(c)Ivaylo Vasilev")
+parser = argparse.ArgumentParser(prog="sysfetch", description="System information fetching tool", epilog="(c)Ivaylo Vasilev")
 parser.add_argument("--version", action="version", version="%(prog)s 0.6", help="show program version")
 args = parser.parse_args()
 

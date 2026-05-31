@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 
+##############################
+# publicip #
+# ======== #
+# Get own public IPv4/IPv6 addresses
+# Copyright (c)2025 Ivaylo Vasilev. Released under the MIT License; see LICENSE for details.
+# Author: Ivaylo Vasilev
+##############################
+
 import argparse
 from urllib import request, error
 
-parser = argparse.ArgumentParser(prog="publicip", description="Public IP")
+parser = argparse.ArgumentParser(prog="publicip", description="Get own public IPv4/IPv6 addresses")
 parser.add_argument("-4", "--ipv4", action="store_true", help="show IPv4")
 parser.add_argument("-6", "--ipv6", action="store_true", help="show IPv6")
 parser.add_argument("-a", "--all", action="store_true", help="show all IPs")

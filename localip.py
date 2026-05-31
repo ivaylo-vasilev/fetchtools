@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+##############################
+# localip.py #
+# ========== #
+# Get own local IP address
+# Copyright (c)2025 Ivaylo Vasilev. Released under the MIT License; see LICENSE for details.
+# Author: Ivaylo Vasilev
+##############################
+
 import socket
 import sys
 
@@ -21,4 +29,4 @@ except KeyboardInterrupt:
     sys.exit(4)
 
 ip = s.getsockname()
-print(ip[0])
+print(f"[+] {ip[0]}")
